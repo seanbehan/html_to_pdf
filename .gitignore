@@ -1,5 +1,4 @@
 *.pyc
-pdfs/*
+pdfs/*.pdf
 .DS_Store
 venv
-
