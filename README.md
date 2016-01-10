@@ -24,6 +24,8 @@ to Heroku. If you're on a different platform you can download a binary of wkhtml
 http://wkhtmltopdf.org/downloads.html. Plop it into the bin directory and set an environment variable that points
 to the executable.
 
+For instance if you are on OSX and installed the .pkg, you can boot a local server and user /usr/local/bin/wkhtmltopdf
+
 ```
-WKHTMLTOPDF_EXEC=./url/local/bin/wkhtmltopdf python app.py
+WKHTMLTOPDF_EXEC=/usr/local/bin/wkhtmltopdf python app.py
 ```
