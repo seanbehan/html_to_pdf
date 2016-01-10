@@ -16,7 +16,10 @@ http post localhost:5000/pdf @sample.html
 In both cases you will receive a PDF in the response.
 
 ## Deploy to Heroku
-Coming soon...
+
+Not sure this works yet...
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## Installing wkhtmltopdf
 This app requires the wkhtmltopdf binary. A binary is packaged with the app for deployment
