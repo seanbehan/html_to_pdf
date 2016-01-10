@@ -1,0 +1,6 @@
+{
+  "name": "HTMLTOPDF",
+  "description": "Turn HTML into PDF",
+  "repository": "https://github.com/seanbehan/html_to_pdf",
+  "keywords": ["flask", "python", "html", "pdf", "webservice"]
+}
