@@ -2,5 +2,12 @@
   "name": "HTMLTOPDF",
   "description": "Turn HTML into PDF",
   "repository": "https://github.com/seanbehan/html_to_pdf",
-  "keywords": ["flask", "python", "html", "pdf", "webservice"]
+  "keywords": ["flask", "python", "html", "pdf", "webservice"],
+  "buildpacks": [
+    {
+      "url": "https://github.com/dscout/wkhtmltopdf-buildpack.git"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    }
 }
