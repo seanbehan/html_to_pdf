@@ -15,6 +15,7 @@ def home():
 @app.route("/pdf", methods=["GET"])
 def make_pdf_from_url():
     pdf_file = '{}/pdfs/{}.pdf'.format(getcwd(), str(uuid4()))
+    source = str(request.args.get('url'))
 
     try:
         pdf_from_url(source, pdf_file, configuration=pdf_config)
