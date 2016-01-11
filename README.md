@@ -23,16 +23,15 @@ In both cases you will receive a PDF in the response.
 
 http://wkhtmltopdf.org/downloads.html
 
-This app requires the wkhtmltopdf binary. If you install this app on Heroku using the Heroku deploy button above, the `app.json`
+This app requires the wkhtmltopdf binary. If you install this app on Heroku, using the Heroku deploy button above, the `app.json`
 will install the necessary buildpacks.
 
-If you're running it somewhere else, you will have to install wkhtmltopdf and set an environment variable `WKHTMLTOPDF` that
-points to the path of the binary.
+If you're running it somewhere else, you will have to install `wkhtmltopdf` and set the environment variable `WKHTMLTOPDF`. It has to point to the path of the binary.
 
-For instance if you are on OSX and installed the wkhtmltopdf .pkg, it's probably at /usr/local/bin/wkhtmltopdf. Then to boot the server just run...
+For instance if you are on OSX and installing the wkhtmltopdf `.pkg`, it's probably at `/usr/local/bin/wkhtmltopdf`. You would then boot up a development server like so...
 
 ```
-WKHTMLTOPDF_EXEC=/usr/local/bin/wkhtmltopdf python app.py
+WKHTMLTOPDF=/usr/local/bin/wkhtmltopdf python app.py
 ```
 
 ## Demo
