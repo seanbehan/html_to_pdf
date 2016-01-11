@@ -1,5 +1,6 @@
 *.pyc
 pdfs/*.pdf
+pdfs/*.html
 .DS_Store
 venv
 test.pdf

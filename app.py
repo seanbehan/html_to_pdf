@@ -1,7 +1,8 @@
 from flask import Flask, request, send_file, jsonify
 from uuid import uuid4
 from os import environ as env, getcwd
-from os.path import basename, exists, system
+from os.path import basename, exists
+from os import system
 
 WKHTMLTOPDF = env.get('WKHTMLTOPDF', '{}/bin/wkhtmltopdf'.format(getcwd()))
 
@@ -15,7 +16,7 @@ def make_pdf(source=''):
         return pdf_file
 
     source_file = '{}/pdfs/{}.html'.format(getcwd(), str(uuid4()))
-    with open(source_file) as f:
+    with open(source_file, 'w') as f:
         f.write(source)
     system('%s %s %s' % (WKHTMLTOPDF, source_file, pdf_file))
     return pdf_file
