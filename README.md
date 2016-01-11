@@ -20,12 +20,16 @@ In both cases you will receive a PDF in the response.
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## Installing wkhtmltopdf
-This app requires the wkhtmltopdf binary. A binary is packaged with the app for deployment
-to Heroku. If you're on a different platform you can download a binary of wkhtmltopdf from here
-http://wkhtmltopdf.org/downloads.html. Plop it into the bin directory and set an environment variable that points
-to the executable.
 
-For instance if you are on OSX and installed the .pkg, you can boot a local server and user /usr/local/bin/wkhtmltopdf
+http://wkhtmltopdf.org/downloads.html
+
+This app requires the wkhtmltopdf binary. If you install this app on Heroku using the Heroku deploy button above, the `app.json`
+will install the necessary buildpacks.
+
+If you're running it somewhere else, you will have to install wkhtmltopdf and set an environment variable `WKHTMLTOPDF` that
+points to the path of the binary.
+
+For instance if you are on OSX and installed the wkhtmltopdf .pkg, it's probably at /usr/local/bin/wkhtmltopdf. Then to boot the server just run...
 
 ```
 WKHTMLTOPDF_EXEC=/usr/local/bin/wkhtmltopdf python app.py
