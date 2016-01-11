@@ -5,7 +5,7 @@ This webapp turns HTML into a PDF. There are two ways to generate a PDF.
 - You can send a GET request to ./pdf?url=http://example.com
 - You can send a POST request to ./pdf with the request body being the HTML you'd like to turn into a PDF.
 
-This example uses the HTTPie Python command line tool.
+This example uses the HTTPie Python command line tool. https://github.com/jkbrzt/httpie
 
 ```
 http get localhost:5000/pdf?url=http://example.com
