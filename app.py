@@ -1,8 +1,7 @@
 from flask import Flask, request, send_file, jsonify
 from uuid import uuid4
-from os import environ as env, getcwd
+from os import environ as env, getcwd, system
 from os.path import basename, exists
-from os import system
 
 WKHTMLTOPDF = env.get('WKHTMLTOPDF', '{}/bin/wkhtmltopdf'.format(getcwd()))
 
