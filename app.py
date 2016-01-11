@@ -1,10 +1,12 @@
 from flask import Flask, request, send_file, jsonify
-from pdfkit import from_string as pdf_from_string, from_url as pdf_from_url
+from pdfkit import from_string as pdf_from_string, from_url as pdf_from_url, configuration as pdfkit_config
 from uuid import uuid4
 from os import environ as env, getcwd
 from os.path import basename, exists
 
+
 app = Flask(__name__)
+pdf_config = pdfkit_config(wkhtmltopdf=env.get('WKHTMLTOPDF_EXEC', '{}/bin/wkhtmltopdf'.format(getcwd())))
 
 @app.route("/")
 def home():
@@ -16,7 +18,7 @@ def make_pdf_from_url():
     source = str(request.args.get('url'))
 
     try:
-        pdf_from_url(source, pdf_file)
+        pdf_from_url(source, pdf_file, configuration=pdf_config)
     except:
         return "We were unable to make a PDF from this url."
 
@@ -27,7 +29,7 @@ def make_pdf_from_html():
     pdf_file = '{}/pdfs/{}.pdf'.format(getcwd(), str(uuid4()))
 
     try:
-        pdf_from_string(unicode(request.data, 'utf-8'), pdf_file)
+        pdf_from_string(unicode(request.data, 'utf-8'), pdf_file, configuration=pdf_config)
     except:
         pass
 
