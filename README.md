@@ -17,8 +17,6 @@ In both cases you will receive a PDF in the response.
 
 ## Deploy to Heroku
 
-Not sure this works yet...
-
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## Installing wkhtmltopdf
@@ -32,3 +30,7 @@ For instance if you are on OSX and installed the .pkg, you can boot a local serv
 ```
 WKHTMLTOPDF_EXEC=/usr/local/bin/wkhtmltopdf python app.py
 ```
+
+## Demo
+
+There is a demo available at http://htmltopdfdemo.herokuapp.com

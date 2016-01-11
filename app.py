@@ -26,7 +26,7 @@ def home():
     return """<html>
     <h3>PDF From HTML</h3>
     <form action='/pdf'>
-    <input size=100 type='text' name='source' placeholder='Enter a valid URL to get a PDF'/>
+    <input size=100 type='text' name='url' placeholder='Enter a valid URL to get a PDF'/>
     <button>Go</button>
     </form></body></html>"""
 
