@@ -6,6 +6,8 @@ from os.path import basename, exists
 WKHTMLTOPDF = env.get('WKHTMLTOPDF', '{}/bin/wkhtmltopdf'.format(getcwd()))
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/": {"origins": "*.pawsquad.com"}})
+
 
 def make_pdf(source=''):
     pdf_file = '{}/pdfs/{}.pdf'.format(getcwd(), str(uuid4()))
