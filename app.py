@@ -7,6 +7,8 @@ from flask_cors import CORS, cross_origin
 WKHTMLTOPDF = env.get('WKHTMLTOPDF', '{}/bin/wkhtmltopdf'.format(getcwd()))
 
 app = Flask(__name__)
+CORS(app)
+
 
 
 def make_pdf(source=''):
