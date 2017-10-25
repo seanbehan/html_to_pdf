@@ -2,6 +2,7 @@ from flask import Flask, request, send_file, jsonify
 from uuid import uuid4
 from os import environ as env, getcwd, system
 from os.path import basename, exists
+from flask_cors import CORS
 
 WKHTMLTOPDF = env.get('WKHTMLTOPDF', '{}/bin/wkhtmltopdf'.format(getcwd()))
 
