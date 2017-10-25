@@ -37,7 +37,7 @@ def make_pdf_from_url():
     pdf_file = make_pdf(source)
     return send_file(pdf_file, as_attachment=False)
 
-cross_origin(["https://www.pawsquad.com", "https://martinwork.eu.ngrok.io"])
+cross_origin(["www.pawsquad.com", "martinwork.eu.ngrok.io"])
 @app.route("/pdf", methods=["POST"])
 def make_pdf_from_html():
     source = unicode(request.data, 'utf-8')
