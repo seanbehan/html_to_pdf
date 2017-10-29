@@ -37,3 +37,12 @@ WKHTMLTOPDF=/usr/local/bin/wkhtmltopdf python app.py
 ## Demo
 
 There is a demo available at http://htmltopdfdemo.herokuapp.com
+
+## CORS
+The app supports CORS headers, for Cross domain services. You can specify a list of domains using the following ENV var
+CORS_DOMAINS
+
+```
+e.g. heroku config:set CORS_DOMAINS="www.domain1.com,my.domain2.org"
+```
+
