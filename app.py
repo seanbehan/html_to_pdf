@@ -3,6 +3,7 @@ from uuid import uuid4
 from os import environ as env, getcwd, system
 from os.path import basename, exists
 from flask_cors import CORS, cross_origin
+from os import environ as env
 
 WKHTMLTOPDF = env.get('WKHTMLTOPDF', '{}/bin/wkhtmltopdf'.format(getcwd()))
 
@@ -39,7 +40,7 @@ def make_pdf_from_url():
     pdf_file = make_pdf(source)
     return send_file(pdf_file, as_attachment=False)
 
-cross_origin(["www.pawsquad.com", "martinwork.eu.ngrok.io"])
+cross_origin(env.get('CORS_DOMAINS', '').split(','))
 @app.route("/pdf", methods=["POST"])
 def make_pdf_from_html():
     source = unicode(request.data, 'utf-8')
